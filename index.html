@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="my photo.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="script.js"></script>
 	<title>Graham's Blog</title>
@@ -9,32 +9,47 @@
 <body>
 	<header>
 		<h1>Graham Nessler</h1>
-		<h3>Programmer, scholar, lover of cats and dogs.</h3>
+		<h3>Aspiring developer, scholar, lover of cats and dogs.</h3>
 		<ul class="mainmenu">
 			<a class="link1" href="index.html"><li><strong><em>Home</em></strong></li></a>
 			<a class="link1" href="aboutme.html"><li>About Me</li></a>
 			<a class="link1" href="politics.html"><li>Politics</li></a>
 		</ul>
 	</header>
-	<div class="template">
+	<div class="template" style="top: 300px;">
+		<a href="charleston-06-03-16.html"><h2>Charleston Wedding (May 21, 2016)</h2></a>
+		<img src="images/charleston.jpeg" style="width: 350px;">
+		<p>I had been meaning to post about this for a while, but never got around to it. I recently attended the beautiful wedding of my cousin, Bruce, to Darim, whom he met in the Army. It was a great event and a precious time for family to converge. <br><br> I was particularly happy to see my brother and mother there. I look forward to seeing the latter soon, when I return to Blacksburg! <br><br>  All best wishes to Bruce and Darim!</p>
+		<label> Posted on June 3, 2016. </label>
+	</div>
+	<div class="template" style="position: absolute; top: 1150px;">
+		<a href="home-cooked-food-05-17-16.html"><h2>Home Cooked Food</h2></a>
+		<img src="images/nia.jpg" >
+		<p>I had a very nice dinner with my relatives, Carl and Donna. They sure know how to cook a chicken!
+		We went on a nice nature walk and then had dinner. It will be a shame to leave them when I leave Floria.
+		You should check out their <a href="http://meadowbeautynursery.com/" target="blank">nursery!</a> The above picture is their dog, Nia, a Welsh Corgi.</p>
+		<label> Posted on May 17, 2016</label>
+	</div>
+	<div class="template" style="position: absolute; top: 2000px;">
 		<a href="dan-05-12-16.html"><h2>Congrats to Dan!</h2></a>
 		<img src="http://www.rackham.umich.edu/images/spotlight/daniel_birchok.jpg">
 		<p>Congrats to my friend Dan, who will be teaching at the <a href="https://www.umflint.edu/" target="blank">University of Michigan-Flint</a> starting in the fall of 2016! I've known Dan since 2005, when we took a seminar together (remember Getting the Documents to Speak, Dan?). I am thrilled at his success and wish him and his family the best! </p>
 		<label> Posted on May 12, 2016</label>
 	</div>
-	<div class="template" style="position: absolute; top: 1150px;"> <!--Put each new entry div at 850px below the preceding one-->
+	<div class="template" style="position: absolute; top: 2850px;"> <!--Put each new entry div at 850px below the preceding one; move each style line up one entry every time I post a new entry. I also need to post a new Back to Top button with each new entry.-->
 		<a href="erik-05-12-16.html"><h2>Congrats to Erik!</h2></a>
 		<img src="https://www.sju.edu/sites/default/files/styles/sju_faculty_portrait_aspectswitch/public/(Inline%20Email%20Image)%20image001.jpg?itok=cZmTE1QT">
 		<p>Congratulations to my friend Erik, who will be an Assistant Professor at the <a href="https://www.uco.edu/" target="blank">University of Central Oklahoma</a> starting in Fall 2016! Erik has been a good friend since 2008, when I met him through my good friend and roommate at the time. Erik is not only a stellar scholar and teacher but also a sweet guy and is richly deserving of this opportunity. Good luck, Erik!!</p>
 		<label>Posted on May 12, 2016</label>
 	</div>
-	<!-- Cut Google pasted cse search from here. -->
+	<!-- I cut the Google pasted cse search from here. -->
 	<div id="search"> <!--Search the page. -->
 		<input type="text" placeholder="Search this Page" id="searchbox1"></input> &nbsp;
 		<input type="submit" onclick="searchPage()"></input>
 		<input type="submit" onclick="Clear()" value="Clear"></input>
 	</div>
-	<a href="aboutme.html"><img id="me" src="my photo.jpeg"></a> <!--My stock photo for the site. -->
+	<a href="aboutme.html"><img id="me" src="images/my photo.jpeg"></a> <!--My stock photo for the site. -->
 	<iframe src="recent.html" id="recFrame"></iframe> <!--The iframe with Recent Posts, in small box -->
+	<input type="submit" onclick="toTop()" value="Back to Top" id="totop"></input> <!--Move with each new entry -->
 </body>
 </html>
