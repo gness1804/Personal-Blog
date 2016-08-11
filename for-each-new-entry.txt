@@ -1,0 +1,5 @@
+For each new entry:
+
+1.) Create entry content in new page (using page template)
+2.) Copy content into div in index.html
+3.) Put new line in recent.html
