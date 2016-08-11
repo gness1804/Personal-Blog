@@ -10,7 +10,3 @@ function Clear() {
 function toTop() {
   window.scrollTo(0, 0);
 }
-
-function toMostRecent() {
-	window.location.replace("#most-recent-entry");
-};
