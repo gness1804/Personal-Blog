@@ -132,9 +132,19 @@ a:hover {
 	color: red;
 }
 
+.recent {
+	text-align: center;
+}
+
 .recent h5 {
 	font-size: 20px;
-	text-align: center;
+	margin-bottom: 50px;
+	/*text-align: center;*/
+}
+
+.recent li {
+	list-style-type: none;
+	margin: 10px 0px;
 }
 
 #recFrame{
@@ -155,6 +165,10 @@ a:hover {
 	margin-right: auto;
 	position: relative;
 }
+
+/*#home-button {
+	margin: auto;
+}*/
 
 .entry-is-hidden {
 	display: none;
