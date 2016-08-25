@@ -41,6 +41,10 @@ h3 {
 	position: relative;
 }
 
+.mainmenu li:hover {
+	color: white;
+}
+
 a.link1:hover {
 	color: red;
 }
@@ -54,17 +58,21 @@ a.link1:visited {
 	color: black;
 }
 
-#me{
-	left: 1000px;
-	position: absolute;
-	top: 400px;
+.current-page {
+	font-style: italic;
+	font-weight: bold;
 }
 
-.stuff-on-right {
-	clear: both;
-	display: inline-block;
-	height: 500px;
-	text-align: right;
+#me{
+	display: block;
+	margin: auto;
+	width: 300px;
+}
+
+.link-section {
+	/*background: linear-gradient(to bottom, white, rgb(173, 167, 177));*/
+	margin-bottom: 50px;
+	text-align: center;
 }
 
 .template {
@@ -131,10 +139,9 @@ a:hover {
 
 #recFrame{
 	height: 250px;
-	left: 1000px;
-	position: absolute;
-	top: 600px;
-	width: 250px;
+	margin: 50px 0px;
+	width: 300px;
+	/*margin: auto;*/
 }
 
 #search {
