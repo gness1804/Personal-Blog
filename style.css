@@ -21,7 +21,7 @@ h3 {
 	text-align: center;
 }
 
-.testing {
+.border-test {
 	border: 1px dotted red; /* temp */
 }
 
@@ -60,10 +60,18 @@ a.link1:visited {
 	top: 400px;
 }
 
+.stuff-on-right {
+	clear: both;
+	display: inline-block;
+	height: 500px;
+	text-align: right;
+}
+
 .template {
 	background-color: white;
 	border: 2px solid gray;
 	height: 800px;
+	margin: auto;
 	margin-bottom: 60px;
 	width: 800px;
 }
@@ -90,6 +98,10 @@ a.link1:visited {
 	max-height: 350px;
 	position: absolute;
 	width: 300px;
+}
+
+.main-container {
+	width: 1000px;
 }
 
 .date {
@@ -129,8 +141,8 @@ a:hover {
 }
 
 #search {
-	position: relative;
-	left: 900px;
+	margin: 40px 0;
+	text-align: center;
 }
 
 #totop {
