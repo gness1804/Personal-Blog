@@ -4,12 +4,14 @@ $(document).ready(function () {
 			$(".testing").toggleClass("border-test");
 	  }
 	  });
-		// $(document).on("load", function () {
-		// 	alert("Hi!");
-		// });
+		// $(".template").on("load",function() {
+		// 	var height = $(".template").height();
+		// 	// alert(height);
+		// 	if (height > 800) {
+		// 		$(".template").addClass("truncated");
+		//   }
+		//   });
 }); //end of jQuery body
-
-
 
 function searchPage() {
 	var x = document.getElementById("searchbox1").value;

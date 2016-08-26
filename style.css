@@ -45,6 +45,11 @@ h3 {
 	color: white;
 }
 
+.truncated {
+	height: 800px;
+	overflow: auto;
+}
+
 a.link1:hover {
 	color: red;
 }
@@ -120,10 +125,6 @@ a.link1:visited {
 .date::first-letter {
 	font-size: 16px !important;
 	font-style: italic;
-}
-
-.truncated {
-	
 }
 
 a:link {
