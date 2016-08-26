@@ -4,6 +4,9 @@ $(document).ready(function () {
 			$(".testing").toggleClass("border-test");
 	  }
 	  });
+		// $(document).on("load", function () {
+		// 	alert("Hi!");
+		// });
 }); //end of jQuery body
 
 

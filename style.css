@@ -122,6 +122,10 @@ a.link1:visited {
 	font-style: italic;
 }
 
+.truncated {
+	
+}
+
 a:link {
 	color: #0000e6
 	text-decoration: none;
