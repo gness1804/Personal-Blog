@@ -76,14 +76,16 @@ a.link1:visited {
 
 .link-section {
 	/*background: linear-gradient(to bottom, white, rgb(173, 167, 177));*/
-	margin-bottom: 50px;
-	text-align: center;
+	display: inline-block;
+  float: right;
+  margin-bottom: 50px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .template {
 	background-color: white;
 	border: 2px solid gray;
-	margin: auto;
 	margin-bottom: 60px;
 	text-align: center;
 	width: 800px;
