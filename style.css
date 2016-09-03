@@ -211,7 +211,10 @@ a:hover {
 	font-style: italic;
 }
 
-xmp {
-	float: left;
-	max-width: 400px;
+textarea {
+	border: 1px solid black;
+	height: 300px;
+	display: block;
+	margin: auto;
+	width: 400px;
 }
