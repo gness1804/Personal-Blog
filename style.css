@@ -192,3 +192,8 @@ a:hover {
 .entry-is-hidden {
 	display: none;
 }
+
+.template .linked-list-pic {
+	width: 600px;
+  height: 800px;
+}
