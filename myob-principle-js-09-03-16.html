@@ -27,11 +27,15 @@
 			<a href="aboutme.html"><img id="me" src="images/headshot.jpg"></a> <!--My stock photo for the site. -->
 			<iframe src="recent.html" id="recFrame"></iframe> <!--The iframe with Recent Posts, in small box -->
 		</aside>
-		<div class="template"> <!--The vessel for the actual posts-->
-			<h2>Post Title</h2>
-			<p class="date"> Posted on [date]</p>
-			<img src="images/headshot.jpg" alt="My photo">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br><br>
+		<div class="template">
+			<h2>The M.Y.O.B Principle for JavaScript</h2>
+			<p class="date"> Posted on September 3, 2016</p>
+			<img src="images/" alt="Screenshot of M.Y.O.B principle in action">
+			<p>
+				JavaScript scopes are often the bane of both new and even many experienced JS developers, but it is critical to understand them well in order to write sound and functional JavaScript. In my own efforts to learn the principles of JS scope, I have found useful the metaphor of a nosy friend or neighbor who can't seem to mind his or her own business. (Hence the title of this post, the "M.Y.O.B." or "Mind Your Own Business" principle.) This has helped me to understand that since JS is function-scoped, each function "protects" variables created inside it from other parts of the code. This can seem quite abstract until one runs into what many developers call "variable pollution" or "global scope pollution", wherein global variables (those that are part of the entire document or global window object) can easily be unintentionally changed by any part of the code, since they are accessible by any function.<br><br>
+
+				Let's start with an example. Let's say one is a part of a young childless (heterosexual) couple that has just moved into a new neighborhood, and an overly nosy neighbor can't stop pestering them about when they will have their first child. The global scope represents the space available to "Mike", the neighbor in question; he can access any variables not "protected" by a function.  
+			</p><br><br>
 		</div>
 	</section>
 </body>
