@@ -36,10 +36,33 @@
 
 				Let's start with an example. Let's say one is a part of a young childless (heterosexual) couple that has just moved into a new neighborhood, and an overly nosy neighbor can't stop pestering them about when they will have their first child. The <span class="myob-copy-italic">global</span> scope represents the space available to "Mike", the neighbor in question; he can access any variables not "protected" by a function. The couple in question, "Bill" and "Suzanne", create their own function to protect their own variables (information) from prying outsiders.<br><br>
 
-				So far, so good. Now let's say that the global variable (var) named "whenWillTheyHaveAChild" is equal to "I don't know." This is Mike's variable that he has access to because he "lives" in the global scope. Now suppose that Bill and Suzanne create an identically-named variable inside their function, with the value of "We might not have kids for personal reasons." They of course don't want Mike or anyone not privy to their trusted circle knowing this, so the function value "We might not have kids for our own reasons" only exists within their function and cannot be accessed by outsiders. (If anyone outside of the couple's private function tries to use the variable called whenWillTheyHaveAChild, it will output "I don't know.")<br><br>
+				So far, so good. Now let's say that the global variable (var) named "whenWillTheyHaveAChild" is equal to "I don't know." This is Mike's variable that he has access to because he "lives" in the global scope. Now suppose that Bill and Suzanne create an identically-named variable inside their function, with the value of "We might not have kids for personal reasons." They of course don't want Mike or anyone not privy to their trusted circle knowing this, so the function value "We might not have kids due to personal preference" only exists within their function and cannot be accessed by outsiders. (If anyone outside of the couple's private function tries to use the variable called whenWillTheyHaveAChild, it will output "I don't know.")<br><br>
 
 				Let's see the code in action: <br><br>
+				<xmp>
+					<script>
+				    var whenWillTheyHaveAChild = "I don't know";
 
+				  function billAndSuzanneQuestion() {
+				    var whenWillTheyHaveAChild = "We might not have kids due to personal preference";
+				    console.log(whenWillTheyHaveAChild);
+				  }
+
+
+
+				  function mikeQuestion() {
+				    console.log(whenWillTheyHaveAChild);
+				  }
+
+				mikeQuestion() //will return "I don't know" because this is a global variable; those who are in the global scope cannot access variables created within functions
+
+				billAndSuzanneQuestion(); //returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+
+				  </script>
+				</xmp>
+
+
+			Mike and Suzanne don't want to advertise to the world that they may not have kids due to personal preference, so they do not have to!
 
 			</p><br><br>
 		</div>
