@@ -206,3 +206,7 @@ a:hover {
 	width: 600px;
   height: 800px;
 }
+
+.myob-copy-italic {
+	font-style: italic;
+}
