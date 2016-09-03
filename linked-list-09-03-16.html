@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+	<title>A "Linked List"</title>
+</head>
+<body>
+	<header>
+		<h1>Graham Nessler</h1>
+		<h3>Aspiring developer, scholar, lover of cats and dogs.</h3>
+		<ul class="mainmenu">
+			<a class="link1" href="index.html"><li>Home</li></a>
+			<a class="link1" href="aboutme.html"><li>About Me</li></a>
+			<a class="link1" href="http://www.grahamnessler.com"><li>Personal Website</li></a>
+		</ul>
+	</header>
+	<div id="search">
+		<input type="text" placeholder="Search this Page" id="searchbox1"></input> &nbsp;
+		<input type="submit" onclick="searchPage()"></input>
+		<input type="submit" onclick="Clear()" value="Clear"></input>
+	</div>
+	<section class="master-container">
+		<aside class="link-section testing">
+			<a href="aboutme.html"><img id="me" src="images/headshot.jpg"></a>
+			<iframe src="recent.html" id="recFrame"></iframe>
+		</aside>
+		<div class="template">
+			<h2>A "Linked List"</h2>
+			<p class="date">Posted on September 3, 2016</p>
+			<img src="images/linked_list.png" alt="Linked List Screenshots" class="linked-list-pic">
+			<p>
+				I just completed my second project at Turing, <a href="https://github.com/gness1804/linked-list" target="_blank">a "linked list"</a> with fellow student Alex Pilewski. (I place the term "linked list" in quotes because while this was the official project title, this was not a true <a href="http://quiz.geeksforgeeks.org/linked-list-set-1-introduction/" target="_blank">linked list</a> in the sense that back-end developers would most likely understand the term.) Our project involved creating a site where the user could enter in a title and url of favorite sites. The program organizes the user's entries into bookmarks that can be toggle "read" and "unread". The user has the option of marking all bookmarks on the page as read, removing all bookmarks, and removing all read bookmarks. The program keeps track of the number of bookmarks on the page as well as the number of read and unread ones currently on the page. <br><br>
+
+				Our biggest challenge was coordinating all of the functions to keep count of the read and unread bookmarks and all those currently on the page. I initially wrote some jQuery that used the global variable count = 0 and reassigned this variable when the user submitted a bookmark and removed a bookmark, but the addition of the functionality to keep track of read and unread bookmarks, and in particular the fact that the "Mark as Read" button within each bookmark toggled the class of "read", necessitated a different approach. <br><br>
+
+				Alex and I discovered that we could replace the counter variable with a few jQuery functions that simply record the length of relevant classes to keep track of the various elements on the page. Go local over global--in coding as well as in shopping! I am proud that our project ended up with zero global variables, which as any seasoned JS developer knows can royally mess up a program. (You can check out my post on the <a href="mother-in-law-09-03-16.html">"mother-in-law principle"</a> for more details.) <br><br>
+
+				At the end of the day, we created a functional program using jQuery, CSS, and HTML. Alex did the majority of the CSS, and I focused on the JavaScript. This project not only helped us improve out JavaScript and jQuery skills but also afforded us the opportunity to learn how to write focused, well-organized CSS by creating several logically-organized stylesheets. The project also enhanced our knowledge of semantic HTML. (See the project <a href="https://github.com/gness1804/linked-list" target="_blank">Github page</a> for details.) I look forward to our next challenge!
+			</p><br><br>
+		</div>
+	</section>
+</body>
+</html>

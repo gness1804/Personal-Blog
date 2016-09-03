@@ -92,6 +92,15 @@ a.link1:visited {
   .link-section {display: none;}
 }
 
+input[type="submit"] {
+	border: 1px solid gray;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+	background-color: white;
+}
+
 .template {
 	background-color: white;
 	border: 2px solid gray;
@@ -191,4 +200,9 @@ a:hover {
 
 .entry-is-hidden {
 	display: none;
+}
+
+.template .linked-list-pic {
+	width: 600px;
+  height: 800px;
 }
