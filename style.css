@@ -210,3 +210,8 @@ a:hover {
 .myob-copy-italic {
 	font-style: italic;
 }
+
+xmp {
+	float: left;
+	max-width: 400px;
+}

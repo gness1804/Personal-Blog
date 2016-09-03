@@ -39,7 +39,8 @@
 				So far, so good. Now let's say that the global variable (var) named "whenWillTheyHaveAChild" is equal to "I don't know." This is Mike's variable that he has access to because he "lives" in the global scope. Now suppose that Bill and Suzanne create an identically-named variable inside their function, with the value of "We might not have kids for personal reasons." They of course don't want Mike or anyone not privy to their trusted circle knowing this, so the function value "We might not have kids due to personal preference" only exists within their function and cannot be accessed by outsiders. (If anyone outside of the couple's private function tries to use the variable called whenWillTheyHaveAChild, it will output "I don't know.")<br><br>
 
 				Let's see the code in action: <br><br>
-				<xmp>
+
+				<textarea>
 					<script>
 				    var whenWillTheyHaveAChild = "I don't know";
 
@@ -47,8 +48,6 @@
 				    var whenWillTheyHaveAChild = "We might not have kids due to personal preference";
 				    console.log(whenWillTheyHaveAChild);
 				  }
-
-
 
 				  function mikeQuestion() {
 				    console.log(whenWillTheyHaveAChild);
@@ -59,10 +58,10 @@
 				billAndSuzanneQuestion(); //returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
 
 				  </script>
-				</xmp>
 
+				</textarea><br><br>
 
-			Mike and Suzanne don't want to advertise to the world that they may not have kids due to personal preference, so they do not have to!
+			Let's examine what's going on. As noted above, the global scope--the variables available to everyone--has the var whenWillTheyHaveAChild, which is set equal to "I don't know" because the outside world (i.e. prying neighbors like Mike) does know know when/if Bill and Suzanne will become parents, much as some like Mike would like to. But inside Bill's and Suzanne's private function, we can see the identically-named var is now equal to their own information. When we call the mikeQuestion function, which references the global scope, we get back "I don't know", but when we call the billAndSuzanneQuestion function, we see their private information, "We might not have kids due to personal preference". Mike and Suzanne certainly don't want to advertise to the world the sensitive details of their potential parental status, and thanks to JavaScript scoping, they don't have to!
 
 			</p><br><br>
 		</div>
