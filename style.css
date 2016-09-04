@@ -194,10 +194,6 @@ a:hover {
 	position: relative;
 }
 
-/*#home-button {
-	margin: auto;
-}*/
-
 .entry-is-hidden {
 	display: none;
 }
@@ -205,4 +201,28 @@ a:hover {
 .template .linked-list-pic {
 	width: 600px;
   height: 800px;
+}
+
+.myob-copy-italic {
+	font-style: italic;
+}
+
+textarea {
+	border: 1px solid black;
+	height: 500px;
+	display: block;
+	margin: auto;
+	width: 400px;
+}
+
+.template .myob-screen-shot {
+	width: 600px;
+	height: 800px;
+}
+
+.myob-code-case {
+	background-color: rgb(196, 215, 211);
+	border: 1px solid rgb(196, 215, 211);
+	border-radius: 5px;
+	font-family: 'Space Mono', monospace;
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>M.Y.O.B. JavaScript</title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    var whenWillTheyHaveAChild = "I don't know";
+
+  function billAndSuzanneQuestion() {
+    var whenWillTheyHaveAChild = "We might not have kids due to personal preference";
+    console.log(whenWillTheyHaveAChild);
+      function closeFriendQuestion() {
+        console.log(whenWillTheyHaveAChild);
+      }
+      closeFriendQuestion(); //returns "We might not have kids due to personal preference" because the close friend has access to the var whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+  }
+
+
+
+  function mikeQuestion() {
+    console.log(whenWillTheyHaveAChild);
+  }
+
+mikeQuestion()
+//will return "I don't know" because this is a global variable; those who are in the global scope cannot access variables created within functions
+
+billAndSuzanneQuestion();
+//returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+
+closeFriendQuestion(); //returns an error message here because closeFriendQuestion is not contained within the global scope. Mike can't access the info that closeFriend has access to 
+
+  </script>
+</html>

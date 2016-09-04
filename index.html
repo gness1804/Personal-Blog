@@ -3,6 +3,7 @@
 <head>
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 	<title>Graham's Blog</title>
@@ -30,19 +31,70 @@
 			<div class="template entry-is-hidden">
 				<!-- Paste entry content here and remove the "entry-is-hidden" class before posting. -->
 		</div>
-			<div class="template entry-is-hidden">
-				<!-- Paste entry content here and remove the "entry-is-hidden" class before posting. -->
+			<div class="template truncated">
+				<h2>The M.Y.O.B Principle for JavaScript Scoping</h2>
+				<p class="date"> Posted on September 3, 2016</p>
+				<img src="images/screen-shot-myob.png" alt="Screenshot of M.Y.O.B principle in action" class="myob-screen-shot">
+				<h4 class="myob-copy-italic">See this on <a href="http://codepen.io/gness1804/pen/gwbOad" target="_blank">Code Pen</a></h4>
+				<p>
+					JavaScript scopes are often the bane of both new and even many experienced JS developers, but it is critical to understand them well in order to write sound and functional JavaScript. In my own efforts to learn the principles of JS scope, I have found useful the metaphor of a nosy friend or neighbor who can't seem to mind his or her own business. (Hence the title of this post, the "M.Y.O.B." or "Mind Your Own Business" principle.) This has helped me to understand that since JS is function-scoped, each function "protects" variables created inside it from other parts of the code. This can seem quite abstract until one runs into what many developers call "variable pollution" or "global scope pollution", wherein global variables (those that are part of the entire document or global window object) can easily be unintentionally changed by any part of the code, since they are accessible by any function.<br><br>
+
+					Let's start with an example. Let's say one is a part of a young childless (heterosexual) couple that has just moved into a new neighborhood, and an overly nosy neighbor can't stop pestering them about when they will have their first child. We'll try to transform this situation into a JavaScript metaphor. The <span class="myob-copy-italic">global</span> scope represents the space available to "Mike", the neighbor in question; he can access any variables not "protected" by a function. The couple in question, "Bill" and "Suzanne", create their own function to protect their own variables (information) from prying outsiders. (These is an entirely hypothetical example, by the way.)<br><br>
+
+					So far, so good. Now let's say that the global variable (<span class="myob-code-case">var</span>) named <span class="myob-code-case">whenWillTheyHaveAChild</span> is equal to "I don't know." This is Mike's variable that he has access to because he "lives" in the global scope. Now suppose that Bill and Suzanne create an identically-named <span class="myob-code-case">var</span> inside their private function, with the value of "We might not have kids for personal reasons." They of course don't want Mike or anyone not privy to their trusted circle knowing this, so the value "We might not have kids due to personal preference" only exists within <span class="myob-copy-italic">their</span> function and cannot be accessed by outsiders. (If anyone outside of the couple's private function tries to use the <span class="myob-code-case">var</span> called <span class="myob-code-case">whenWillTheyHaveAChild</span>, it will output "I don't know.")<br><br>
+
+					Let's see the <a href="http://codepen.io/gness1804/pen/gwbOad" target="_blank">code</a> in action: <br><br>
+
+					<textarea>
+						<script>
+					    var whenWillTheyHaveAChild = "I don't know";
+
+					  function billAndSuzanneQuestion() {
+					    var whenWillTheyHaveAChild = "We might not have kids due to personal preference";
+					    console.log(whenWillTheyHaveAChild);
+					      function closeFriendQuestion() {
+					        console.log(whenWillTheyHaveAChild);
+					      }
+					      closeFriendQuestion(); //returns "We might not have kids due to personal preference" because the close friend has access to the var whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+					  }
+
+
+
+					  function mikeQuestion() {
+					    console.log(whenWillTheyHaveAChild);
+					  }
+
+					mikeQuestion()
+					//will return "I don't know" because this is a global variable; those who are in the global scope cannot access variables created within functions
+
+					billAndSuzanneQuestion();
+					//returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+
+					closeFriendQuestion(); //returns an error message here because closeFriendQuestion is not contained within the global scope. Mike can't access the info that closeFriend has access to
+
+					  </script>
+
+				</textarea><br><br>
+
+				Let's examine what's going on. As noted above, the global scope--the variables available to everyone--has the <span class="myob-code-case">var</span> called <span class="myob-code-case">whenWillTheyHaveAChild</span>, which is set equal to "I don't know" because the outside world (i.e. prying neighbors like Mike) does know know when/if Bill and Suzanne will become parents, much as some like Mike would like to. But inside Bill's and Suzanne's private function, we can see the identically-named <span class="myob-code-case">var</span> is now equal to their own information. When we call the <span class="myob-code-case">mikeQuestion()</span> function, which references the global scope, we get back "I don't know", but when we call the <span class="myob-code-case">billAndSuzanneQuestion()</span> function, we see their private information, "We might not have kids due to personal preference". Mike and Suzanne certainly don't want to advertise to the world the sensitive details of their potential parental status, and thanks to JavaScript scoping, they don't have to! (Well, that would be the case if the real world operated like JavaScript.)<br><br>
+
+				Let's take this one step further. Now let's suppose that our couple has a very close friend with whom they share some personal information such as their potential plans to be parents or not. We can create a function called <span class="myob-code-case">closeFriendQuestion()</span> <span>within</span> the original <span class="myob-code-case">billAndSuzanneQuestion()</span> function. In JavaScript, functions created within other functions have access to the variables of outer functions (this is the core of a JS concept called <span class="myob-copy-italic">closure</span>; see this useful <a href="http://www.w3schools.com/js/js_function_closures.asp" target="_blank">summary</a> of closure for more information.) Thanks to closure, the closeFriend has access to the information contained in the couple's <span class="myob-code-case">whenWillTheyHaveAChild</span> <span class="myob-code-case">var</span>, but those outside the function do not. You can see this demonstrated in the code above.<br><br>
+
+				I hope this example made some sense of JS closure and scoping! Much like questions surrounding jurisdiction in the law (so I've been told, anyway), issues regarding JS scope torment newbies and sometimes vex even those with many years of experience. But if one keeps in mind the concept of functions protecting private variables, such as our example of keeping prying neighbors from accessing sensitive personal information, then this might bring some clarity to the equation.
+
+				</p><br><br>
 			</div>
 			<div class="template truncated">
 				<h2>A "Linked List"</h2>
 				<p class="date">Posted on September 3, 2016</p>
 				<img src="images/linked_list.png" alt="Linked List Screenshots" class="linked-list-pic">
+				<h4 class="myob-copy-italic">See this on <a href="https://github.com/gness1804/linked-list" target="_blank">Github.</a></h4>
 				<p>
 					I just completed my second project at Turing, <a href="https://github.com/gness1804/linked-list" target="_blank">a "linked list"</a> with fellow student Alex Pilewski. (I place the term "linked list" in quotes because while this was the official project title, this was not a true <a href="http://quiz.geeksforgeeks.org/linked-list-set-1-introduction/" target="_blank">linked list</a> in the sense that back-end developers would most likely understand the term.) Our project involved creating a site where the user could enter in a title and url of favorite sites. The program organizes the user's entries into bookmarks that can be toggle "read" and "unread". The user has the option of marking all bookmarks on the page as read, removing all bookmarks, and removing all read bookmarks. The program keeps track of the number of bookmarks on the page as well as the number of read and unread ones currently on the page. <br><br>
 
 					Our biggest challenge was coordinating all of the functions to keep count of the read and unread bookmarks and all those currently on the page. I initially wrote some jQuery that used the global variable count = 0 and reassigned this variable when the user submitted a bookmark and removed a bookmark, but the addition of the functionality to keep track of read and unread bookmarks, and in particular the fact that the "Mark as Read" button within each bookmark toggled the class of "read", necessitated a different approach. <br><br>
 
-					Alex and I discovered that we could replace the counter variable with a few jQuery functions that simply record the length of relevant classes to keep track of the various elements on the page. Go local over global--in coding as well as in shopping! I am proud that our project ended up with zero global variables, which as any seasoned JS developer knows can royally mess up a program. (You can check out my post on the <a href="mother-in-law-09-03-16.html">"mother-in-law principle"</a> for more details.) <br><br>
+					Alex and I discovered that we could replace the counter variable with a few jQuery functions that simply record the length of relevant classes to keep track of the various elements on the page. Go local over global--in coding as well as in shopping! I am proud that our project ended up with zero global variables, which as any seasoned JS developer knows can royally mess up a program. (You can check out my post on the <a href="myob-principle-js-09-03-16.html">"JavaScript M.Y.O.B. principle"</a> for more details.) <br><br>
 
 					At the end of the day, we created a functional program using jQuery, CSS, and HTML. Alex did the majority of the CSS, and I focused on the JavaScript. This project not only helped us improve out JavaScript and jQuery skills but also afforded us the opportunity to learn how to write focused, well-organized CSS by creating several logically-organized stylesheets. The project also enhanced our knowledge of semantic HTML. (See the project <a href="https://github.com/gness1804/linked-list" target="_blank">Github page</a> for details.) I look forward to our next challenge!
 				</p><br><br>
@@ -51,15 +103,15 @@
 				<h2>Number Guesser Project with Kinan Whyte</h2>
 				<p class="date"> Posted on August 25, 2016</p>
 				<img src="images/number-guesser-screen.png" alt="Screenshot of number guesser program.">
+				<h4 class="myob-copy-italic">See this on <a href="https://github.com/gness1804/number-guesser" target="_blank">Github.</a></h4>
 				<p>
-					I just finished constructing a <a href="https://github.com/kswhyte/number-guesser" target="_blank">number guesser program</a>with colleague Kinan Whyte during Module 1 at the <a href="https://www.turing.io/" target="_blank">Turing School of Software and Design</a>, where I am a front-end engineering student. We created a program with basic functionality, albeit with a few bugs. Our program accepts a number from the user (default range 0-100) and generates a pseudo-random number which it compares to the user's number. The program tells the user whether his/her number is too low, too high, out of the acceptable range, or not a number (such as text). If the user correctly guesses the computer's number, the program regenerates another pseudo-random value and adjusts the max and min by +10 and -10 respectively. The program also accepts optional max and min values from the user. Upon user submission of these values, the program regenerates a pseudo-random within the new range. <br><br>
+					I constructed a <a href="https://github.com/gness1804/number-guesser" target="_blank">number guesser program </a> with colleague Kinan Whyte during Module 1 at the <a href="https://www.turing.io/" target="_blank">Turing School of Software and Design</a>, where I am a front-end engineering student. We created a program with basic functionality, albeit with a few bugs. Our program accepts a number from the user (default range 0-100) and generates a pseudo-random number which it compares to the user's number. The program tells the user whether his/her number is too low, too high, out of the acceptable range, or not a number (such as text). If the user correctly guesses the computer's number, the program regenerates another pseudo-random value and adjusts the max and min by +10 and -10 respectively. The program also accepts optional max and min values from the user. Upon user submission of these values, the program regenerates a pseudo-random within the new range. <br><br>
 
 					Our main accomplishment was constructing an interactive quantitative program that responds to user input. We used JavaScript, CSS, and of course HTML in building this program. Kinan did most of the CSS and I wrote much of the JavaScript (though Kinan also made some crucial contributions in the latter area). We employed the Atom text editor to complete the project and made use of online resources such as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank">random number generator from MDN</a> (the third from the top on the linked page), which was the basis for our number generator.<br><br>
 
 					We learned a great deal from this project. We both significantly improved our JavaScript skills, particularly in the areas of interactions between functions, structuring a JavaScript page, and refactoring JS to make it more readable and logically organized. The major snags we confronted were struggles to fix parts of the program that one of us had "broken" in revisions and attempting to make the program store the pseudo-random number during sessions while also resetting it when the user wins or hits the "reset" button, which returns the game to its default state (we also included a "clear" button to clear the input box). We successfully worked through these challenges with the invaluable assistance of colleagues and teachers at Turing.<br><br>
 
-					I also gained important experience in team collaboration, as this was my first partnered programming project. Overall, this was an important educational experience that I will build on in the future.
-
+					I also gained important experience in team collaboration, as this was my first partnered  programming project. Overall, this was an important educational experience that I will build on in the future.
 				</p><br><br>
 			</div>
 			<div class="template">
