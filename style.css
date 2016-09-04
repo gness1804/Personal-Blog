@@ -194,10 +194,6 @@ a:hover {
 	position: relative;
 }
 
-/*#home-button {
-	margin: auto;
-}*/
-
 .entry-is-hidden {
 	display: none;
 }
@@ -217,4 +213,9 @@ textarea {
 	display: block;
 	margin: auto;
 	width: 400px;
+}
+
+.template .myob-screen-shot {
+	width: 600px;
+	height: 800px;
 }
