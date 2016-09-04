@@ -219,3 +219,7 @@ textarea {
 	width: 600px;
 	height: 800px;
 }
+
+.myob-code-case {
+	font-family: 'Space Mono', monospace;
+}
