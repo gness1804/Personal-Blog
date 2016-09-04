@@ -14,6 +14,10 @@
   function billAndSuzanneQuestion() {
     var whenWillTheyHaveAChild = "We might not have kids due to personal preference";
     console.log(whenWillTheyHaveAChild);
+      function closeFriendQuestion() {
+        console.log(whenWillTheyHaveAChild);
+      }
+      closeFriendQuestion(); //returns "We might not have kids due to personal preference" because the close friend has access to the var whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
   }
 
 
@@ -26,7 +30,9 @@ mikeQuestion()
 //will return "I don't know" because this is a global variable; those who are in the global scope cannot access variables created within functions
 
 billAndSuzanneQuestion();
-//returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function 
+//returns "We might not have kids due to personal preference" because this information is private, or protected, within the variable whenWillTheyHaveAChild created within the billAndSuzanneQuestion function
+
+closeFriendQuestion(); //returns an error message here because closeFriendQuestion is not contained within the global scope. Mike can't access the info that closeFriend has access to 
 
   </script>
 </html>
