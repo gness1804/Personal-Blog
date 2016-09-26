@@ -31,8 +31,23 @@
 		<div class="template entry-is-hidden">
 			<!-- Paste entry content here and remove the "entry-is-hidden" class before posting. -->
 		</div>
-		<div class="template entry-is-hidden">
-			<!-- Paste entry content here and remove the "entry-is-hidden" class before posting. -->
+		<div class="template truncated">
+			<h2>Bluecifer's Revenge!</h2>
+			<p class="date"> Posted on September 25, 2016.</p>
+			<img src="images/game-time-screenshot.png" alt="Screenshot of our game.">
+			<h4 class="myob-copy-italic">See this on <a href="https://github.com/gprocell927/game-time" target="_blank">Github,</a> and try it out <a href="https://gprocell927.github.io/game-time/" target="_blank">live</a>.</h4>
+			<p>
+				My fellow students Gabi Procell and Lacey Knaff and I just finished <a href="https://gprocell927.github.io/game-time/" target="_blank">Bluecifer's Revenge</a>, a side-scrolling game where you must keep your avatar, the eponymous <a href="https://en.wikipedia.org/wiki/Blue_Mustang" target="_blank">demonic horse from Denver International Airport (DIA)</a>, from hitting airplanes or falling to the ground as he flies (yes, flies) back home to DIA. The airplanes get faster as the score increases, and I also added an "Easter Egg" that the intrepid gamer might just encounter. You can find more details on the project <a href="https://github.com/gprocell927/game-time/blob/master/README.md" target="_blank">readme</a>.<br><br>
+
+				This project involved a steep learning curve, as we were confronted with using Webpack, HTML5 Canvas, and JavaScript testing for the project, which were relatively novel to all of us. We also confronted the challenge of maintaining state in the program using object-oriented programming. In short, the game needed to know all of the objects on the screen and what they were doing at any given time. To meet these challenges, we first composed most of the game in one or two JS files, and then expanded them out into several: one to govern enemies (airplanes), one for the avatar Bluecifer, a quasi-omniscient game file, and the index.js, which was the one file to rule them all.<br><br>
+
+				The two most difficult parts of the project were figuring out a way to make the airplanes spawn and keep track of them, as well as re-creating the game's functionality after breaking up all the JS files as discussed above. With respect to the first challenge, we initially devised a method of controlling and spawning enemies based on a combination of JS requestAnimationFrame and <a href="http://www.w3schools.com/jsref/met_win_settimeout.asp" target="_blank">setTimeout</a>. In short, we created three enemies with independent JS functions, and "staggered" their appearance using setTimeouts. (We made the enemies "loop" by resetting their x positions when they flew off the screen.) While this approach had the benefit of relative simplicity, as it did not necessitate an array, we found that it greatly increased the game's lag, since all those setTimeouts were continually firing. In order to solve this problem, we ended up creating an array that stored all the enemies and could also be used to remove all enemies from the screen when needed (such as then the player wins or loses).<br><br>
+
+				The second, and more painful, problem mentioned above--the problem of re-creating functionality after a major revision to the code--taught us a sobering lesson: never perform open-heart surgery on your code without making atomic tests to make sure everything that you change is working, when you change it. That is, console log, alert, or use another method to test functionality each time you make a change in the code, rather than after you have moved most of your JS to new pages. We spent hours re-establishing all of the functionality; much of that time could have been saved with methodical, atomic tests as we progressed. It was a hard lesson that will serve us well moving forward as programmers.<br><br>
+
+				In the end, we learned a great deal about object-oriented programming (OOP) and its power to enhance programs' functionality. We also created a playable game in only ten days that attests to the versatility of JavaScript and OOP.
+
+			</p><br><br>
 		</div>
 			<div class="template truncated">
 				<h2>Idea Box</h2>
