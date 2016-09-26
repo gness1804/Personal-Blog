@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+	<title>Page Title</title> <!--Specific page title here... -->
+</head>
+<body>
+	<header>
+		<h1>Graham Nessler</h1>
+		<h3>Aspiring developer, scholar, lover of cats and dogs.</h3>
+		<ul class="mainmenu">
+			<a class="link1" href="index.html"><li>Home</li></a>
+			<a class="link1" href="aboutme.html"><li>About Me</li></a>
+			<a class="link1" href="http://www.grahamnessler.com"><li>Personal Website</li></a>
+		</ul>
+	</header>
+	<div id="search">
+		<input type="text" placeholder="Search this Page" id="searchbox1"></input> &nbsp;
+		<input type="submit" onclick="searchPage()"></input>
+		<input type="submit" onclick="Clear()" value="Clear"></input>
+	</div>
+	<section class="master-container">
+		<aside class="link-section testing">
+			<a href="aboutme.html"><img id="me" src="images/headshot.jpg"></a> <!--My stock photo for the site. -->
+			<iframe src="recent.html" id="recFrame"></iframe> <!--The iframe with Recent Posts, in small box -->
+		</aside>
+		<div class="template"> <!--The vessel for the actual posts-->
+			<h2>Post Title</h2>
+			<p class="date"> Posted on [date]</p>
+			<img src="images/headshot.jpg" alt="My photo">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br><br>
+		</div>
+	</section>
+</body>
+</html>
